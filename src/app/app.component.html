@@ -1,0 +1,17 @@
+<div class="calculator">
+    <h1>Calculator</h1>
+    <div class="result">
+        {{ result }}
+    </div>
+    <div class="methods">
+        <app-base-button [value]="'+'" (click)="setMethod('+')"></app-base-button>
+        <app-base-button [value]="'-'" (click)="setMethod('-')"></app-base-button>
+        <app-base-button [value]="'/'" (click)="setMethod('/')"></app-base-button>
+        <app-base-button [value]="'x'" (click)="setMethod('x')"></app-base-button>
+    </div>
+    <div class="numbers">
+        <app-base-button [value]="n" *ngFor="let n of numbers" (chosenValue)="setNumber(n)"></app-base-button>
+        <app-base-button [value]="'C'" (click)="reset()"></app-base-button>
+        <app-base-button [value]="'='" (click)="setMethod('=')"></app-base-button>
+    </div>
+</div>
